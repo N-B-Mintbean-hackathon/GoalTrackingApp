@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+import { auth } from "../../firebase";
 import Header from "../../layout/header";
 
 export default function Register() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <Header />
@@ -15,19 +32,28 @@ export default function Register() {
                 className="input-field"
                 placeholder="username"
                 type="text"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
               />
               <br />
               <input
                 className="input-field"
                 placeholder="E-mail"
-                type="password"
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
 
               <br />
               <input
                 className="input-field"
                 placeholder="password"
-                type="text"
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
               <br />
               <input
@@ -36,7 +62,15 @@ export default function Register() {
                 type="password"
               />
               <br />
-              <button className="btn-lp">Register</button>
+              <button
+                className="btn-lp"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSubmit();
+                }}
+              >
+                Register
+              </button>
             </form>
           </Col>
         </Row>
