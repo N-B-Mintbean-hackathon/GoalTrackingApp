@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 export default function Header() {
   return (
-    <div>
+    <div className="header">
       <Container>
         <Row>
           <Col xs={6} md={{ span: 1, offset: 1 }}>
