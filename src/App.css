@@ -6,6 +6,13 @@
   --dark-blue: rgb(9, 79, 219);
   --headlines: "Potta One", cursive;
   --text: "East Sea Dokdo", cursive;
+  --red: #e60000;
+  --green: #4ce600;
+  --yellow: #ffff00;
+  --blue: #0052cc;
+  --greenHealth: #00b33c;
+  --purple: #e60073;
+  --careerBlue: #003366;
 }
 
 .App {
@@ -124,6 +131,48 @@ h3 {
   font-family: var(--text);
   margin: 20px;
   font-size: 50px;
+}
+.task-container {
+  margin: auto;
+  padding: 10px;
+  width: 70%;
+  height: 500px;
+  border: solid 3px var(--dark-blue);
+  font-family: var(--text);
+  font-size: 20px;
+  box-shadow: 10px 10px 5px grey;
+}
+.one-task {
+  margin: auto;
+  padding: 10px;
+  width: 35%;
+  height: 400px;
+  border: solid 3px var(--dark-blue);
+  font-family: var(--text);
+  font-size: 20px;
+  box-shadow: 10px 10px 5px grey;
+}
+/*className for tasks*/
+.todo {
+  border: solid 4px var(--red);
+}
+.inprogress {
+  border: solid 4px var(--yellow);
+}
+.done {
+  border: solid 4px var(--green);
+}
+.personal {
+  background-color: var(--purple);
+}
+.health {
+  background-color: var(--greenHealth);
+}
+.career {
+  background-color: var(--careerBlue);
+}
+.social {
+  background-color: var(--blue);
 }
 @media (max-width: 768px) {
 }

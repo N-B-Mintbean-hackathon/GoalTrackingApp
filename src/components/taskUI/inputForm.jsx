@@ -2,6 +2,15 @@ import React from "react";
 import Header from "../../layout/header";
 
 export default function InputForm() {
+  /* if task-status. todo className = todo
+                    . inprogress className = inprogress
+                    . done className = done
+                    
+    if task-area. personal className = personal
+                . health className = gealth
+                . career className = career
+                . social className = social*/
+
   return (
     <div>
       <Header />

@@ -5,7 +5,14 @@ export default function OneTask() {
   return (
     <div>
       <Header />
-      <h3>One task</h3>
+      <div className="one-task">
+        <h3>One task</h3>
+
+        <p>title</p>
+        <p>description</p>
+        <button className="btn-lp">Delete</button>
+        <button className="btn-lp">Upadate</button>
+      </div>
       <hr />
     </div>
   );
