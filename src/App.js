@@ -1,11 +1,14 @@
 import './App.css';
+import Content from './layout/content';
+import Footer from './layout/footer';
+import Header from './layout/header';
 
 function App() {
   return (
     <div className="App">
-      <h1>Goal Tracking App</h1>
-      <h2>To Do list</h2>
-      <h2>Time Tracking</h2>
+      <Header />
+      <Content />
+      <Footer />
     </div>
   );
 }

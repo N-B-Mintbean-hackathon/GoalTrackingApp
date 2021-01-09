@@ -1,38 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Potta+One&display=swap");
+
+:root {
+  --light-blue: rgb(36, 209, 231);
+  --dark-blue: rgb(9, 79, 219);
+  --headlines: "Potta One", cursive;
+  --text: "East Sea Dokdo", cursive;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: var(--dark-blue);
+  font-family: var(--headlines);
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.showcase {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 0, 20px;
+  color: var(--dark-blue);
 }
 
-.App-link {
-  color: #61dafb;
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(200, 200, 255, 0.6);
+}
+
+.content {
+  z-index: 10;
+}
+
+.headline {
+  font-family: var(--headlines);
+  margin: 30px;
+}
+.btn-lp {
+  font-family: var(--headlines);
+  margin: 30px;
+  padding: 20px;
+  height: 100px;
+  width: 120px;
+  border-radius: 50%;
+  border: solid 3px var(--dark-blue);
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-lp:hover {
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+}
+
+img {
+  width: 150px;
+  height: 140px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.input-field {
+  margin: 15px;
+  padding: 10px;
+  width: 35%;
+  border: solid 3px var(--dark-blue);
+  font-family: var(--text);
+  font-size: 20px;
+  box-shadow: 10px 10px 5px grey;
+}
+@media (max-width: 768px) {
 }
