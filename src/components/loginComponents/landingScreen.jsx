@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export default function LoginScreen() {
+export default function LandingScreen() {
   return (
     <div>
       <section className="showcase">
@@ -31,13 +31,15 @@ export default function LoginScreen() {
             <Row>
               <Col>
                 <button className="btn-lp">Log in</button>
+              </Col>
+
+              <Col>
                 <button className="btn-lp">Register</button>
               </Col>
             </Row>
           </Container>
         </div>
       </section>
-      <hr />
     </div>
   );
 }

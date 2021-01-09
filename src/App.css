@@ -88,6 +88,12 @@ img {
   width: 150px;
   height: 140px;
 }
-
+.input-field {
+  margin: 15px;
+  padding: 10px;
+  border: solid 3px var(--dark-blue);
+  font-family: var(--text);
+  font-size: 20px;
+}
 @media (max-width: 768px) {
 }

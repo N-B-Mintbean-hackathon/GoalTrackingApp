@@ -1,10 +1,14 @@
 import React from "react";
-import LoginScreen from "../components/loginScreen";
+import LandingScreen from "../components/loginComponents/landingScreen";
+import LogIn from "../components/loginComponents/logIn";
+import Register from "../components/loginComponents/register";
 
 export default function Content() {
   return (
     <div>
-      <LoginScreen />
+      <LandingScreen />
+      <LogIn />
+      <Register />
     </div>
   );
 }
