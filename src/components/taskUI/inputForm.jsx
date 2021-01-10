@@ -27,6 +27,8 @@ export default function InputForm() {
       status: 'To Do',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+
+    setInput('');
   };
 
   return (
