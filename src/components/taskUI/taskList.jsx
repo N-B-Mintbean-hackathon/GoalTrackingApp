@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
 
 export default function TaskList() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/users/2/tasks")
+      .then((res) => res.json())
+      .then((json) => setTasks(json.tasks));
+  }, []);
+
+  useEffect(() => {
+    console.log(tasks);
+  }, [tasks]);
+
   return (
     <div>
       <Header />
@@ -28,7 +40,9 @@ export default function TaskList() {
         </select>
       </form>
       <div className="task-container">
-        <ShortTask />
+        {tasks.map((task) => {
+          return <ShortTask title={task.title} key={task.id} />;
+        })}
       </div>
       <hr />
     </div>
