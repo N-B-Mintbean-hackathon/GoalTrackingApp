@@ -10,6 +10,8 @@ export default function OneTask({ title, description }) {
 
         <p>{title}</p>
         <p>{description}</p>
+        <p>start time</p>
+        <p>end time</p>
         <button className="btn-lp">Delete</button>
         <button className="btn-lp">Update</button>
       </div>
