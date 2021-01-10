@@ -32,6 +32,10 @@ export function makeServer({ environment = "test" } = {}) {
           return `Body ${i + 1}`;
         },
 
+        category: "personal",
+
+        status: "todo",
+
         userId: 1,
       }),
     },
@@ -56,9 +60,9 @@ export function makeServer({ environment = "test" } = {}) {
       server.create("user");
       server.create("user");
       server.create("user");
-      server.create("task");
-      server.create("task");
-      server.create("task");
+      server.create("task", { status: 'done', category: "career" });
+      server.create("task", { status: 'inprogress', category: "health" });
+      server.create("task", { status: 'todo', category: "social" });
       server.create("task", { userId: 2 });
       server.create("task", { userId: 3 });
       server.create("task", { userId: 2 });

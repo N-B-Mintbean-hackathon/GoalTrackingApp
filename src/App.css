@@ -152,6 +152,28 @@ h3 {
   font-size: 20px;
   box-shadow: 10px 10px 5px grey;
 }
+.short-task {
+  margin: auto;
+  margin-bottom: 10px;
+  border: solid var(--dark-blue);
+  width: 95%;
+}
+.short-task-btn {
+  border-radius: 50%;
+  border: solid 2px var(--dark-blue);
+  padding: 5px;
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+}
+.short-task-title {
+  float: left;
+  margin: 5px;
+  font-size: 30px;
+}
+.short-task-btn:hover {
+  color: var(--light-blue);
+  background-color: var(--dark-blue);
+}
 /*className for tasks*/
 .todo {
   border: solid 4px var(--red);

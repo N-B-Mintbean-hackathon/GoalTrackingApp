@@ -6,7 +6,7 @@ export default function TaskList() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch("/api/users/2/tasks")
+    fetch("/api/users/1/tasks")
       .then((res) => res.json())
       .then((json) => setTasks(json.tasks));
   }, []);
@@ -41,7 +41,14 @@ export default function TaskList() {
       </form>
       <div className="task-container">
         {tasks.map((task) => {
-          return <ShortTask title={task.title} key={task.id} />;
+          return (
+            <ShortTask
+              title={task.title}
+              key={task.id}
+              status={task.status}
+              category={task.category}
+            />
+          );
         })}
       </div>
       <hr />
