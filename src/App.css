@@ -192,9 +192,11 @@ h3 {
 }
 .career {
   background-color: var(--careerBlue);
+  color: white;
 }
 .social {
   background-color: var(--blue);
+  color: white;
 }
 @media (max-width: 768px) {
 }
