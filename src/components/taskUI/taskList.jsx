@@ -1,8 +1,25 @@
-import React from "react";
-import Header from "../../layout/header";
-import ShortTask from "./shortTask";
+import React, { useState, useEffect } from 'react';
+import Header from '../../layout/header';
+import ShortTask from './shortTask';
+import { db } from '../../firebase';
 
 export default function TaskList() {
+  const testUsername = 'IgISticUkwQ2WrSqFmGamYqpHBU2';
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    //realtime listener that will map our posts from firebase
+    db.collection('tasks').onSnapshot((snapshot) => {
+      setTasks(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+      console.log(tasks);
+    });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -29,6 +46,7 @@ export default function TaskList() {
       </form>
       <div className="task-container">
         <ShortTask />
+        <p>{tasks}</p>
       </div>
       <hr />
     </div>

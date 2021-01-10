@@ -1,5 +1,7 @@
-import React from "react";
-import Header from "../../layout/header";
+import React, { useState } from 'react';
+import Header from '../../layout/header';
+import firebase from 'firebase';
+import { db } from '../../firebase';
 
 export default function InputForm() {
   /* if task-status. todo className = todo
@@ -10,6 +12,22 @@ export default function InputForm() {
                 . health className = gealth
                 . career className = career
                 . social className = social*/
+
+  //State Components
+  const [input, setInput] = useState('');
+  const testUserName = 'UYZuTK8EOLNxTX5kqO7B91KYUm13';
+
+  const postTask = (e) => {
+    e.preventDefault();
+
+    db.collection(testUserName).add({
+      title: 'TestTitle',
+      description: input,
+      category: 'Personal',
+      status: 'To Do',
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  };
 
   return (
     <div>
@@ -30,12 +48,16 @@ export default function InputForm() {
         </select>
         <br />
         <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           type="text"
           placeholder="Task description"
           className="input-area"
         />
         <br />
-        <button className="btn-lp">Send</button>
+        <button onClick={postTask} className="btn-lp">
+          Send
+        </button>
       </form>
       <hr />
     </div>
