@@ -63,6 +63,12 @@ export function makeServer({ environment = "test" } = {}) {
       server.create("task", { status: 'done', category: "career" });
       server.create("task", { status: 'inprogress', category: "health" });
       server.create("task", { status: 'todo', category: "social" });
+      server.create("task", { status: 'todo', category: "personal" });
+      server.create("task", { status: 'todo', category: "health" });
+      server.create("task", { status: 'inprogress', category: "personal" });
+      server.create("task", { status: 'todo', category: "career" });
+      server.create("task", { status: 'todo', category: "social" });
+
       server.create("task", { userId: 2 });
       server.create("task", { userId: 3 });
       server.create("task", { userId: 2 });

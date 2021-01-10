@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
+import { Sortable } from "@shopify/draggable";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -28,12 +29,14 @@ export default function TaskList() {
           className="input-field"
         />
         <select name="status" id="task-area" className="input-select">
+          <option value="all">All</option>
           <option value="personal">Personal</option>
           <option value="health">Health/Fitness</option>
           <option value="career">Career</option>
           <option value="social">Social</option>
         </select>
         <select name="status" id="task-status" className="input-select">
+          <option value="all">All</option>
           <option value="todo">TO DO</option>
           <option value="inprogress">IN PROGRESS</option>
           <option value="done">DONE</option>
