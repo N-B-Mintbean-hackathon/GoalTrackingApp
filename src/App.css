@@ -172,8 +172,46 @@ h3 {
   height: 400px;
   border: solid 3px var(--dark-blue);
   font-family: var(--text);
-  font-size: 20px;
+  font-size: 35px;
   box-shadow: 10px 10px 5px grey;
+  overflow: scroll;
+}
+/* width */
+.one-task::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.one-task::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+
+/* Handle */
+.one-task::-webkit-scrollbar-thumb {
+  background: var(--light-blue);
+}
+
+/* Handle on hover */
+.one-task::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-blue);
+}
+.one-task-btn {
+  font-family: var(--headlines);
+  margin: 30px;
+  padding: 2px;
+  height: 80px;
+  width: 80px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: solid 3px var(--dark-blue);
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.one-task-btn:hover {
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
 }
 .short-task {
   margin: auto;
