@@ -3,6 +3,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
 export default function LandingScreen() {
   return (
@@ -30,11 +31,15 @@ export default function LandingScreen() {
             </Row>
             <Row>
               <Col>
-                <button className="btn-lp">Log in</button>
+                <Link to="/logIn">
+                  <button className="btn-lp">Log in</button>
+                </Link>
               </Col>
 
               <Col>
-                <button className="btn-lp">Register</button>
+                <Link to="/register">
+                  <button className="btn-lp">Register</button>
+                </Link>
               </Col>
             </Row>
           </Container>

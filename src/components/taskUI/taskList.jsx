@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
@@ -42,18 +43,23 @@ export default function TaskList() {
           <option value="inprogress">IN PROGRESS</option>
           <option value="done">DONE</option>
         </select>
+        <Link to="/inputForm">
+          <button className="one-task-btn">New Task</button>
+        </Link>
       </form>
       <div className="task-container">
-        {tasks.map((task) => {
-          return (
-            <ShortTask
-              title={task.title}
-              key={task.id}
-              status={task.status}
-              category={task.category}
-            />
-          );
-        })}
+        <Link to="/oneTask">
+          {tasks.map((task) => {
+            return (
+              <ShortTask
+                title={task.title}
+                key={task.id}
+                status={task.status}
+                category={task.category}
+              />
+            );
+          })}
+        </Link>
       </div>
       <Footer />
       <hr />
