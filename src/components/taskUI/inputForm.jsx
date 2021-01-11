@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 
 export default function InputForm() {
@@ -28,6 +29,7 @@ export default function InputForm() {
         <br />
         <button className="btn-lp">Send</button>
       </form>
+      <Footer />
       <hr />
     </div>
   );

@@ -260,5 +260,29 @@ h3 {
   background-color: var(--blue);
   color: white;
 }
+.footer {
+  font-size: 25px;
+}
+.footer li {
+  list-style: none;
+  font-family: var(--text);
+  font-size: 35px;
+}
+.soc-ico {
+  width: 45px;
+  height: 45px;
+  margin: 10px;
+  border-radius: 50%;
+  border: solid var(--dark-blue);
+}
+.footer .soc-ico:hover {
+  animation: footer 0.7s ease;
+}
+
+@keyframes footer {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 768px) {
 }

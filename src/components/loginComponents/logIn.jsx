@@ -2,6 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Header from "../../layout/header";
+import Footer from "../../layout/footer";
 
 export default function LogIn() {
   return (
@@ -29,6 +30,7 @@ export default function LogIn() {
           </Col>
         </Row>
       </section>
+      <Footer />
       <hr />
     </div>
   );

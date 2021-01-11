@@ -3,6 +3,7 @@ import Header from "../../layout/header";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Footer from "../../layout/footer";
 
 export default function OneTask({ title, description, status, category }) {
   return (
@@ -61,6 +62,7 @@ export default function OneTask({ title, description, status, category }) {
           </Row>
         </Container>
       </div>
+      <Footer />
       <hr />
     </div>
   );

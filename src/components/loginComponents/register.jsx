@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import { auth } from "../../firebase";
 import Header from "../../layout/header";
+import Footer from "../../layout/footer";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -75,6 +76,7 @@ export default function Register() {
           </Col>
         </Row>
       </section>
+      <Footer />
       <hr />
     </div>
   );
