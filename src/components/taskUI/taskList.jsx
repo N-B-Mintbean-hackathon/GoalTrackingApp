@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
-import { Sortable } from "@shopify/draggable";
+//import { Sortable } from "@shopify/draggable";
 
 export default function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -54,6 +55,7 @@ export default function TaskList() {
           );
         })}
       </div>
+      <Footer />
       <hr />
     </div>
   );
