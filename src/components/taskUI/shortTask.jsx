@@ -3,12 +3,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export default function ShortTask({ title, category, status }, props) {
+export default function ShortTask({ id, title, category, status }, props) {
   const [curentTask, setCurentTask] = useState({});
-
   const handleClick = (id) => {
     console.log("hello world");
-    fetch(`/api/users/1/tasks/${id}`)
+    fetch(`/api/users/tasks`)
       .then((res) => res.json())
       .then((json) => setCurentTask(json.tasks));
     console.log(curentTask);

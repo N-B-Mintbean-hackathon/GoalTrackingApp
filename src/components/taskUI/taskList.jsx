@@ -57,8 +57,8 @@ export default function TaskList(props) {
                 key={task.id}
                 status={task.status}
                 category={task.category}
-                onClick={({ title, id, status, category }) => {
-                  onClick(title, id, status, category);
+                onClick={(id) => {
+                  onClick(task.id);
                 }}
               />
             );
