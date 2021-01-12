@@ -14,7 +14,12 @@ export default function InputForm() {
           <option value="career">Career</option>
           <option value="social">Social</option>
         </select>
-        <input type="text" placeholder="Task title" className="input-field" />
+        <input
+          type="text"
+          required
+          placeholder="Task title"
+          className="input-field"
+        />
         <select name="status" id="task-status" className="input-select">
           <option value="todo">TO DO</option>
           <option value="inprogress">IN PROGRESS</option>

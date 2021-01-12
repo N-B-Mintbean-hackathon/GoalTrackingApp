@@ -5,7 +5,8 @@ import Header from "../../layout/header";
 import ShortTask from "./shortTask";
 //import { Sortable } from "@shopify/draggable";
 
-export default function TaskList() {
+export default function TaskList(props) {
+  const { onClick } = props;
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -56,6 +57,9 @@ export default function TaskList() {
                 key={task.id}
                 status={task.status}
                 category={task.category}
+                onClick={({ title, id, status, category }) => {
+                  onClick(title, id, status, category);
+                }}
               />
             );
           })}

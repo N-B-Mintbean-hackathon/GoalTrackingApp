@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export default function ShortTask({ title, category, status }) {
+export default function ShortTask({ title, category, status }, props) {
+  const [curentTask, setCurentTask] = useState({});
+
+  const handleClick = (id) => {
+    console.log("hello world");
+    fetch(`/api/users/1/tasks/${id}`)
+      .then((res) => res.json())
+      .then((json) => setCurentTask(json.tasks));
+    console.log(curentTask);
+  };
   return (
-    <div className="short-task">
+    <div className="short-task" onClick={handleClick}>
       <div className={status}>
         <div className={category}>
           <Container>
