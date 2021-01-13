@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Header from "../../layout/header";
 import Footer from "../../layout/footer";
+import Button from 'react-bootstrap/Button'
 
 export default function LogIn() {
   return (
@@ -25,7 +26,8 @@ export default function LogIn() {
               />
 
               <br />
-              <button className="btn-lp">Log in</button>
+              <Button variant="primary">Log in</Button>{' '}
+
             </form>
           </Col>
         </Row>

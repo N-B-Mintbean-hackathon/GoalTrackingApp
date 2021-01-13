@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Potta+One&display=swap");
-
 :root {
   --light-blue: rgb(36, 209, 231);
   --dark-blue: rgb(9, 79, 219);
@@ -18,6 +17,8 @@
 .App {
   text-align: center;
   color: var(--dark-blue);
+  background-color: #0084fd;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
 h1 {
   font-weight: 300;
@@ -83,6 +84,7 @@ h1 {
   height: 100px;
   width: 120px;
   border-radius: 50%;
+  overflow: hidden;
   border: solid 3px var(--dark-blue);
   background-color: var(--light-blue);
   color: var(--dark-blue);

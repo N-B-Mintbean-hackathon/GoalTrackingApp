@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
+import Button from 'react-bootstrap/Button';
 //import { Sortable } from "@shopify/draggable";
 
-export default function TaskList() {
+export default function TaskList(props) {
+  const {onClick} = props
   const [tasks, setTasks] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filteredTasks, setFilteredTasks] = useState([]);
 
   useEffect(() => {
     fetch("/api/users/1/tasks")
@@ -17,6 +21,16 @@ export default function TaskList() {
   useEffect(() => {
     console.log(tasks);
   }, [tasks]);
+
+  useEffect(() => {
+    setFilteredTasks(
+      tasks.filter((task) =>
+        task.title.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, tasks]);
+
+  //search function
 
   return (
     <div>
@@ -29,6 +43,7 @@ export default function TaskList() {
           id="search"
           placeholder="&#128269; Search"
           className="input-field"
+          onChange={(e) => setSearch(e.target.value)}
         />
         <select name="status" id="task-area" className="input-select">
           <option value="all">All</option>
@@ -44,21 +59,35 @@ export default function TaskList() {
           <option value="done">DONE</option>
         </select>
         <Link to="/inputForm">
-          <button className="one-task-btn">New Task</button>
+        <Button variant="primary">New Task</Button>{' '}
         </Link>
       </form>
       <div className="task-container">
         <Link to="/oneTask">
+
+        {filteredTasks.map((task) => (
+        <ShortTask key={task.id}
+        title={task.title}
+        status={task.status}
+        category={task.category}
+        onClick={(id) => {
+          onClick(task.id);
+        }} {...task} />
+      ))}
+
           {tasks.map((task) => {
-            return (
-              <ShortTask
-                title={task.title}
-                key={task.id}
-                status={task.status}
-                category={task.category}
-              />
-            );
-          })}
+              return (
+                <ShortTask
+                  title={task.title}
+                  key={task.id}
+                  status={task.status}
+                  category={task.category}
+                  onClick={(id) => {
+                    onClick(task.id);
+                  }}
+                />
+              );
+            })}
         </Link>
       </div>
       <Footer />

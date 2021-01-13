@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../../layout/footer";
+import Button from 'react-bootstrap/Button'
 
 export default function OneTask({ title, description, status, category }) {
   return (
@@ -45,7 +46,8 @@ export default function OneTask({ title, description, status, category }) {
             </Col>
             <Col>
               {" "}
-              <button className="one-task-btn">Timer</button>
+              <Button variant="primary">Timer</Button>{' '}
+
             </Col>
             <Col>
               {" "}
@@ -54,10 +56,13 @@ export default function OneTask({ title, description, status, category }) {
           </Row>
           <Row>
             <Col>
-              <button className="one-task-btn">Delete</button>
+            <Button variant="primary">Delete</Button>{' '}
+
+              
             </Col>
             <Col>
-              <button className="one-task-btn">Update</button>
+            <Button variant="primary">Upadate</Button>{' '}
+
             </Col>
           </Row>
         </Container>
