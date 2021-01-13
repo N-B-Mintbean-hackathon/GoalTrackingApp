@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
 
 export default function ShortTask({ id, title, category, status }, props) {
   const [curentTask, setCurentTask] = useState({});
@@ -31,8 +32,10 @@ export default function ShortTask({ id, title, category, status }, props) {
                 <p className="short-task-title">{status}</p>
               </Col>
               <Col>
-                <button className="short-task-btn">Update</button>
-                <button className="short-task-btn">Delete</button>
+              <Button variant="primary">Upadate</Button>{' '}
+              <Button variant="primary">Delete</Button>{' '}
+
+
               </Col>
             </Row>
           </Container>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
 
 import { auth } from "../../firebase";
 import Header from "../../layout/header";
@@ -63,15 +64,17 @@ export default function Register() {
                 type="password"
               />
               <br />
-              <button
-                className="btn-lp"
+              
+                <Button variant="primary"
+
+             
                 onClick={(e) => {
                   e.preventDefault();
                   handleSubmit();
-                }}
-              >
+                }} >
                 Register
-              </button>
+                </Button>{' '}
+        
             </form>
           </Col>
         </Row>

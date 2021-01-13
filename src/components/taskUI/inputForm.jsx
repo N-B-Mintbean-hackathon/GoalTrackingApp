@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../layout/footer";
 import Header from "../../layout/header";
+import Button from 'react-bootstrap/Button'
 
 export default function InputForm() {
   return (
@@ -32,7 +33,8 @@ export default function InputForm() {
           className="input-area"
         />
         <br />
-        <button className="btn-lp">Send</button>
+        <Button variant="primary">Send</Button>{' '}
+
       </form>
       <Footer />
       <hr />

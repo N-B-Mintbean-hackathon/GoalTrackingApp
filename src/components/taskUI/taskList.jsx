@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Footer from "../../layout/footer";
 import Header from "../../layout/header";
 import ShortTask from "./shortTask";
+import Button from 'react-bootstrap/Button';
 //import { Sortable } from "@shopify/draggable";
 
 export default function TaskList(props) {
   const { onClick } = props;
   const [tasks, setTasks] = useState([]);
+ 
 
   useEffect(() => {
     fetch("/api/users/1/tasks")
@@ -18,6 +20,8 @@ export default function TaskList(props) {
   useEffect(() => {
     console.log(tasks);
   }, [tasks]);
+
+  //search function
 
   return (
     <div>
@@ -30,6 +34,9 @@ export default function TaskList(props) {
           id="search"
           placeholder="&#128269; Search"
           className="input-field"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
         />
         <select name="status" id="task-area" className="input-select">
           <option value="all">All</option>
@@ -45,24 +52,24 @@ export default function TaskList(props) {
           <option value="done">DONE</option>
         </select>
         <Link to="/inputForm">
-          <button className="one-task-btn">New Task</button>
+        <Button variant="primary">New Task</Button>{' '}
         </Link>
       </form>
       <div className="task-container">
         <Link to="/oneTask">
           {tasks.map((task) => {
-            return (
-              <ShortTask
-                title={task.title}
-                key={task.id}
-                status={task.status}
-                category={task.category}
-                onClick={(id) => {
-                  onClick(task.id);
-                }}
-              />
-            );
-          })}
+              return (
+                <ShortTask
+                  title={task.title}
+                  key={task.id}
+                  status={task.status}
+                  category={task.category}
+                  onClick={(id) => {
+                    onClick(task.id);
+                  }}
+                />
+              );
+            })}
         </Link>
       </div>
       <Footer />
